@@ -16,11 +16,12 @@ function nextSlide() {
   showSlide(currentSlide)
 }
 
-// Auto-advance slides every 5 seconds
-setInterval(nextSlide, 5000)
-
-// Initialize first slide
-showSlide(0)
+// Initialize hero slider after DOM is ready to avoid flicker
+document.addEventListener("DOMContentLoaded", () => {
+  showSlide(0)
+  // Auto-advance slides every 5 seconds
+  setInterval(nextSlide, 5000)
+})
 
 // Testimonials
 const testimonials = [
